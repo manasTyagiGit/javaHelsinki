@@ -1,68 +1,30 @@
-import java.util.*;
-import java.nio.file.Paths;
+//import java.util.*;
+//import java.nio.file.Paths;
 //import java.lang.*;
 
 public class App 
 {
     public static void main(String[] args) throws Exception 
     {
-        Scanner input = new Scanner (System.in);
-        System.out.println ("What file you want to open ? ");
-        String ip  = input.nextLine();
+        Clock clock = new Clock();
+        int n = 25;
+        while (n-- > 1) {
+            System.out.println(clock);
+            clock.advance();
+        }    
 
-        try
-        {
-            Scanner file = new Scanner (Paths.get ("/home/manastyagi/Desktop/sample/src/" + ip));
-           
-            System.out.println ("Team: ");
-            String teamIp = input.nextLine ();
-            int games = 0;
-            int wins = 0, losses = 0;
+        Timer timer = new Timer();
 
-            while (file.hasNextLine())
-            {
-                String[] ipLine = file.nextLine().split(",");
-                if (ipLine[0].equals(teamIp))
-                {
-                    games++;
-                    if (Integer.valueOf(ipLine[2]) > Integer.valueOf(ipLine[3]))
-                    {
-                        wins++;
-                    }
-                    else
-                    {
-                        losses++;
-                    }
-                }
+        while (true) {
+            System.out.println(timer);
+            timer.advance();
 
-                if (ipLine[1].equals(teamIp))
-                {
-                    games++;
-                    if (Integer.valueOf(ipLine[3]) > Integer.valueOf(ipLine[2]))
-                    {
-                        wins++;
-                    }
-                    else
-                    {
-                        losses++;
-                    }
-                }
+            try {
+                Thread.sleep(10);
+            } 
+            catch (Exception e) {
+                e.printStackTrace();
             }
-                        
-            file.close();
-
-            System.out.println ("Games: " + games);
-            System.out.println ("Wins: " + wins);
-            System.out.println ("Losses: " + losses);
         }
-
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-
-        
-        input.close ();
-    
     }
 }
