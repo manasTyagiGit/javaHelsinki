@@ -6,25 +6,15 @@ public class App
 {
     public static void main(String[] args) throws Exception 
     {
-        Clock clock = new Clock();
-        int n = 25;
-        while (n-- > 1) {
-            System.out.println(clock);
-            clock.advance();
-        }    
+        Cube oSheaJackson = new Cube(4);
+        System.out.println(oSheaJackson.volume());
+        System.out.println(oSheaJackson);
 
-        Timer timer = new Timer();
+        System.out.println();
 
-        while (true) {
-            System.out.println(timer);
-            timer.advance();
+        Cube salt = new Cube(2);
+        System.out.println(salt.volume());
+        System.out.println(salt);
 
-            try {
-                Thread.sleep(10);
-            } 
-            catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
     }
 }
