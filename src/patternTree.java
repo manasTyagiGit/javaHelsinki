@@ -1,6 +1,6 @@
-import java.lang.*;
+//import java.lang.*;
 import java.util.*;
-import java.io.*;
+//import java.io.*;
 
 public class patternTree {
 
