@@ -6,25 +6,15 @@ public class App
 {
     public static void main(String[] args) throws Exception 
     {
-        Cube oSheaJackson = new Cube(4);
-        System.out.println(oSheaJackson.volume());
-        System.out.println(oSheaJackson);
+        Product tapeMeasure = new Product("Tape measure");
+        Product plaster = new Product("Plaster", "home improvement section");
+        Product tyre = new Product("Tyre", 5);
 
-        System.out.println();
+        System.out.println(tapeMeasure);
+        System.out.println(plaster);
+        System.out.println(tyre);
 
-        Cube salt = new Cube(2);
-        System.out.println(salt.volume());
-        System.out.println(salt);
-
-        FitByte assistant = new FitByte(30, 60);
-
-        double percentage = 0.5;
-
-        while (percentage < 1.0) {
-            double target = assistant.targetHeartRate(percentage);
-            System.out.println("Target " + (percentage * 100) + "% of maximum: " + target);
-            percentage = percentage + 0.1;
-        }
+        
 
     }
 }
